@@ -1,0 +1,61 @@
+O desenvolvimento de uma aplicação em Python começa com os seguintes passos:
+
+1. Definir o Objetivo
+O que o programa deve fazer?
+	
+	O programa deve receber dados de entrada como materias, assuntos e caracteristicas para que asssim sorteie dentro das variaveis
+	possiveis exercicos para serem utilizados pelo usuario como base de estudos. Por exemplo. Ele recebe a entrada "HTML5", o assunto "Site", a caracteristica1 "Esportivo",
+	caracteristica2 "Azul" e Caracteristica3 "Branco"
+	Contendo somente essas variaveis ao gerar um exercicio, ele exibiria como dados de saida "Utilize HTML5 para criar um site esportivo nas cores Azul e Branco
+	No programa também pode ser inserido algum tipo de projeto que o usuario gostaria de tentar, o alocando assim entre as possiveis opções de exercicio de treino.
+	
+Quem será o usuário final?
+	
+	Estudantes que ficam em duvida sobre quais exericios realizarem por conta propria para treinar suas habilidades em materias que estão estudando.
+	
+Qual problema ele resolve?
+	
+	O bloqueio criativo ou falta de motivação em realizar projetos proprios sem a presença de um professor, ou instrutor ou instituição de ensino, dizendo o que é interessante ou não a ser feito
+	
+2. Planejamento e Arquitetura
+Escolha o tipo de aplicação: CLI, GUI, Web, API, etc.
+
+	Aplicação em Python, inicialmente em texto como estrutura
+	Apos isso, python com consultas em MySql
+	e apos isso, uma interface grafica utilzando as ferramentas citadas.
+	
+Estruture o código: divida em módulos, classes e funções.
+	
+	1 - Função:	Boas Vindas 
+		É exibido na tela o nome do programa e abaixo sua função
+		juntamente com um tutorial sobre como adicionar dados 
+		
+	2 - Função:	O que fazer?
+		O usuario escolhe entre inserir dados ou gerar um exercicio
+		
+	3 - Função:	Gerar exericio
+		O programa acessa a lista de materias inseridas e atribui um numero a cada elemento 
+		em seguida ele gera um numero atraves da chamada de função random.randint(1,x) 
+		onde x é o ultimo elemento da lista materias e o armazena como materia.gerada
+		em seguida baseado em qual materia foi escolhida, é realizado o mesmo procedimento com as listas
+		"assunto", "caracteristica1", "caracteristica2"  e ou "caracteristica3" ate compor totalmente o nome do exericio
+		em seguida compara o nome do exericicio gerado com cada elemento da lista "recusados" se ele não estiver contido na lista
+		o nome do exercicio sera exibido na tela com as opções abaixo, caso contrario, sera gerado um novo exercicio 
+		"Aceitar", "Recusar", "Gerar outro exercicio"
+		Se a opção selecionada for "Gerar outro exercicio" e o exericio gerado não estiver contido na lista de materias existentes
+		sera adicionado o exercicio a lista, caso a opção selecionada seja "Recusar" o exercicio sera adicionado a lista "Recusados"
+	
+4. Escolher Bibliotecas e Frameworks
+Exemplo: Flask para web, PyQt para interface gráfica, Pandas para manipulação de dados.
+
+5. Codificação
+Comece com um protótipo simples e vá aprimorando.
+Use boas práticas: PEP8, modularização, docstrings.
+
+6. Testes e Depuração
+Escreva testes unitários (unittest, pytest).
+Depure usando print() ou pdb.
+
+7. Empacotamento e Distribuição
+Se for um script simples, pode ser um .py ou .exe com pyinstaller.
+Para pacotes maiores, crie um setup.py e publique no PyPI.
