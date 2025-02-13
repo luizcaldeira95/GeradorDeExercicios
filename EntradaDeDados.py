@@ -1,3 +1,6 @@
+# main.py
+from banco_de_dados import adicionar_projeto, listar_projetos
+
 def EntradaDeDados():
     ajuda = {
         "P": "Projeto - Define o nome do projeto gerado e seu propósito geral.",
@@ -31,15 +34,24 @@ def EntradaDeDados():
         [Ajuda] Mostrar informações detalhadas sobre cada item.
 
         Escolha uma opção: """
-    ).strip().upper()  # Remove espaços extras e transforma em maiúsculas
+    ).strip().upper()
 
     if opcao == "AJUDA":
         print("\nLista de opções disponíveis:\n")
         for chave, descricao in ajuda.items():
             print(f"[{chave}] {descricao}")
-    elif opcao in ajuda:
-        print(f"\nOpção escolhida: {ajuda[opcao]}")
-    else:
-        print("\nOpção inválida. Use um dos códigos da lista.")
+    elif opcao == "P":
+        print("\nOpção escolhida: Projeto")
+        nome_projeto = input("Digite o nome do projeto: ")
+        adicionar_projeto(nome_projeto)
 
-EntradaDeDados()
+        while True:
+            resposta = input("Gostaria de adicionar mais alguma informação? (s/n): ").strip().lower()
+            if resposta == "n":
+                print("✅ Projeto adicionado com sucesso!\n")
+                break
+            elif resposta == "s":
+                return EntradaDeDados()
+            else:
+                print("Opção inválida! Digite 's' para sim ou 'n' para não.")
+

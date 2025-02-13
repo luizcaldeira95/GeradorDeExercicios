@@ -1,4 +1,4 @@
-
+from EntradaDeDados import EntradaDeDados
 
 def BoasVindas():
 
@@ -37,17 +37,17 @@ def BoasVindas():
 
 
 def Gerador():
-
+    from EntradaDeDados import EntradaDeDados
 
     escolha = input("""Vamos começar? 
 [1] Gerar Projeto
-[2] Editar dados 🚀
+[2] Adicionar itens 🚀
  """)
 
     if escolha == "1":
-        gerarpr()
+        print("Gerar")
     elif escolha == "2":
-        editar()
+        EntradaDeDados()
     else:
         print("Opção inválida. Tente novamente.")
         Gerador()
@@ -55,11 +55,6 @@ def Gerador():
 
 def editar():
     print("Editar")
-
-def gerarpr():
-    print("Gerar Projeto")
-
-
 
 BoasVindas()
 Gerador()
